@@ -129,14 +129,14 @@ Final grades will be assigned according to the standard cutoffs (90%+ for an A, 
 | Apr 1   | T    | Supervised ML: The 5 Tribes of Machine Learning ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/21-Five-Tribes/21slides.html)) | [PS 8](https://raw.githack.com/tyleransom/DScourseS25/master/ProblemSets/PS8/PS8.pdf) |
 | Apr 3   | Th   | Unsupervised ML: Clustering ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/22_23-Unsupervised-ML/22_23slides.html)) | |
 | Apr 8   | T    | Unsupervised ML: Dimensionality reduction and reinforcement learning ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/22_23-Unsupervised-ML/22_23slides.html)) | [PS 9](https://raw.githack.com/tyleransom/DScourseS25/master/ProblemSets/PS9/PS9.pdf) |
-| Apr 10  | Th   | **No Class** (Prof. Ransom travel) | |
-| Apr 15  | T    | Machine learning vs. econometrics ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/24-ML-vs-Econometrics/24slides.html)) | [PS 10](https://raw.githack.com/tyleransom/DScourseS25/master/ProblemSets/PS10/PS10.pdf) |
-| Apr 17  | Th   | Discrete choice modeling: static and dynamic discrete choice ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/25_26-Discrete-Choice/25_26slides.html)) | |
-| Apr 22  | T    | Strategies for more powerfully utilizing LLMs ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/27-GPT/27slides.html)) | [PS 11](https://raw.githack.com/tyleransom/DScourseS25/master/ProblemSets/PS11/PS11.pdf) |
-| Apr 24  | Th   | Final Project presentations ([Rubric](https://github.com/tyleransom/DScourseS25/blob/master/FinalProject/README.md)) | |
+| Apr 10  | Th   | Machine learning vs. econometrics ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/24-ML-vs-Econometrics/24slides.html)) | [PS 10](https://raw.githack.com/tyleransom/DScourseS25/master/ProblemSets/PS10/PS10.pdf) | 
+| Apr 15  | T    | Discrete choice modeling: static and dynamic discrete choice ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/25_26-Discrete-Choice/25_26slides.html)) | | 
+| Apr 17  | Th   | Strategies for more powerfully utilizing LLMs ([Slides](https://raw.githack.com/tyleransom/DScourseS25/master/LectureNotes/27-GPT/27slides.html)) | [PS 11](https://raw.githack.com/tyleransom/DScourseS25/master/ProblemSets/PS11/PS11.pdf) | 
+| Apr 22  | T    | Final Project presentations ([Rubric](https://github.com/tyleransom/DScourseS25/blob/master/FinalProject/README.md)) | |
+| Apr 24  | Th   | **No Class** (Prof. Ransom travel) | |
 | Apr 29  | T    | Final Project presentations ([Rubric](https://github.com/tyleransom/DScourseS25/blob/master/FinalProject/README.md)) | |
 | May 1   | Th   | Final Project presentations ([Rubric](https://github.com/tyleransom/DScourseS25/blob/master/FinalProject/README.md)) | [PS 12](https://raw.githack.com/tyleransom/DScourseS25/master/ProblemSets/PS12/PS12.pdf) |
-| May 5   | M    | Final Exam (in class, 1:30-3:30pm) | Final project due ([Scoresheet](https://raw.githack.com/tyleransom/DScourseS25/master/FinalProject/Scoresheet.pdf)) |
+| May 5   | M    |                                    | Final project due ([Scoresheet](https://raw.githack.com/tyleransom/DScourseS25/master/FinalProject/Scoresheet.pdf)) |
 
 ## Helpful Links ##
 
