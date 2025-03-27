@@ -53,7 +53,7 @@ X <- model.matrix(~Sepal.Width+Petal.Length+Petal.Width+Species,iris)
 
 ## initial values
 theta0 <- runif(dim(X)[2]+1) #start at uniform random numbers equal to number of coefficients
-theta0 <- append(as.vector(summary(lm(Sepal.Length~Sepal.Width+Petal.Length+Petal.Width+Species,data=iris))$coefficients[,1]),runif(1))
+#theta0 <- append(as.vector(summary(lm(Sepal.Length~Sepal.Width+Petal.Length+Petal.Width+Species,data=iris))$coefficients[,1]),runif(1))
 
 ## Algorithm parameters
 options <- list("algorithm"="NLOPT_LN_NELDERMEAD","xtol_rel"=1.0e-6,"maxeval"=1e4)
@@ -166,64 +166,89 @@ print(paste("The minimum of f(beta,y,X) is ", beta, sep = ""))
 ## Closed-form solution
 print(summary(lm(Sepal.Length~Sepal.Width+Petal.Length+Petal.Width+Species,data=iris)))
 
+
+
+
 #----------------------------------
 # Stochastic gradient descent with OLS
 #----------------------------------
-
-# set up a stepsize
+# set up parameters
 alpha <- 0.0003
+max_iter <- 1000000
 
 ## Our objective function
-objfun <- function(beta,y,X) {
-return ( sum((y-X%*%beta)^2) )
+objfun <- function(beta, y, X) {
+    return(sum((y - X %*% beta)^2))
 }
 
-# define the gradient of our objective function
-gradient <- function(beta,y,X) {
-return ( as.vector(-2*X%*%(y-t(X)%*%beta)) )
+# define the gradient for a single observation
+gradient <- function(beta, y_i, X_i) {
+    # For a single observation: -2 * X_i^T * (y_i - X_i*beta)
+    return(-2 * t(X_i) * (y_i - sum(X_i * beta)))
 }
 
 ## read in the data
 y <- iris$Sepal.Length
-X <- model.matrix(~Sepal.Width+Petal.Length+Petal.Width+Species,iris)
+X <- model.matrix(~Sepal.Width+Petal.Length+Petal.Width+Species, iris)
 
 ## initial values
-beta <- runif(dim(X)[2]) #start at uniform random numbers equal to number of coefficients
-
-# randomly initialize a value to beta
 set.seed(100)
+beta <- runif(ncol(X))
 
-# create a vector to contain all beta's for all steps
-beta.All <- matrix("numeric",length(beta),iter)
+# Storage for beta history
+beta_history <- matrix(0, nrow=ncol(X), ncol=max_iter)
+beta_history[,1] <- beta
 
-# stochastic gradient descent method to find the minimum
-iter  <- 1
-beta0 <- 0*beta
-while (norm(as.matrix(beta0)-as.matrix(beta))>1e-12) {
+# stochastic gradient descent method
+iter <- 1
+converged <- FALSE
+beta_prev <- beta + 1  # Ensure different from beta initially
+
+while (!converged && iter < max_iter) {
+    # Store previous beta
+    beta_prev <- beta
+    
     # Randomly re-order the data
     random <- sample(nrow(X))
-    X <- X[random,]
-    y <- y[random]
+    X_shuffled <- X[random,]
+    y_shuffled <- y[random]
+    
     # Update parameters for each row of data
-    for(i in 1:dim(X)[1]){
-        beta0 <- beta
-        beta <- beta0 - alpha*gradient(beta0,y[i],as.matrix(X[i,]))
-        beta.All[,i] <- beta
+    for(i in 1:nrow(X)) {
+        X_i <- as.numeric(X_shuffled[i,])  # Convert to numeric vector
+        y_i <- y_shuffled[i]
+        grad <- gradient(beta, y_i, X_i)
+        beta <- beta - alpha * grad
     }
-    alpha <- alpha/1.0005
-    if (iter%%1000==0) {
-        print(beta)
+    
+    # Reduce learning rate
+    alpha <- alpha / 1.0005
+    
+    # Store current beta
+    if (iter < max_iter) {
+        beta_history[, iter+1] <- beta
     }
-    iter <- iter+1
+    
+    # Check convergence
+    if (sqrt(sum((beta - beta_prev)^2)) < 1e-12) {
+        converged <- TRUE
+    }
+    
+    # Print progress
+    if (iter %% 1000 == 0) {
+        cat("Iteration:", iter, "Beta:", beta, "\n")
+    }
+    
+    iter <- iter + 1
 }
 
-# print result and plot all xs for every iteration
-print(iter)
-print(paste("The minimum of f(beta,y,X) is ", beta, sep = ""))
-
-## Closed-form solution
-print(summary(lm(Sepal.Length~Sepal.Width+Petal.Length+Petal.Width+Species,data=iris)))
 
 
+# Print results
+cat("Total iterations:", iter - 1, "\n")
+cat("Final beta values:", beta, "\n")
 
-
+# Compare with closed-form solution
+ols_model <- lm(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width + Species, data=iris)
+cat("\nClosed-form solution:\n")
+print(coef(ols_model))

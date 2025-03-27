@@ -8,9 +8,9 @@ eval_grad_f <- function(x) {
 return( 4*x[1]^3 - 9*x[1]^2 )
 }
 # initial values
-x0 <- -5
+x0 <- 2.25
 # Algorithm parameters
-opts <- list("algorithm"="NLOPT_LD_LBFGS","xtol_rel"=1.0e-8)
+opts <- list("algorithm"="NLOPT_LD_LBFGS","xtol_rel"=1.0e-6)
 # Find the optimum!
 res <- nloptr( x0=x0,eval_f=eval_f,eval_grad_f=eval_grad_f,opts=opts)
 print(res)
@@ -18,9 +18,8 @@ print(res)
 
 
 
-
 # initial values
-xstart <- 5
+xstart <- 2.25
 # Algorithm parameters
 options <- list("algorithm"="NLOPT_LN_NELDERMEAD","xtol_rel"=1.0e-8)
 # Find the optimum!
