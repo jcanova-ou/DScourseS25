@@ -1,0 +1,100 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{siunitx}
+\usepackage{tabularray}
+\usepackage{float}
+
+\title{Problem Set 7}
+\author{Justin Canova}
+
+\begin{document}
+\maketitle
+
+
+\section{Question 6}
+The logwage is missing at 25 percentage.  I would say that the missing data is missing at random due to the missingness being restricted to a single variable.
+
+\begin{table}[H]
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{6}={1,2,3,4,5,6,7,8,9}{solid, 0.1em, black},
+}                     %% tabularray inner close
+\toprule
+& Unique & Missing Pct. & Mean & SD & Min & Median & Max \\ \midrule %% TinyTableHeader
+logwage & 670 & 25 & 1.6 & 0.4 & 0.0 & 1.7 & 2.3 &  \\
+hgc & 16 & 0 & 13.1 & 2.5 & 0.0 & 12.0 & 18.0 &  \\
+tenure & 259 & 0 & 6.0 & 5.5 & 0.0 & 3.8 & 25.9 &  \\
+age & 13 & 0 & 39.2 & 3.1 & 34.0 & 39.0 & 46.0 &  \\
+&    & N & \% &  &  &  &  &  \\
+college & college grad & 530 & 23.8 &  &  &  &  &  \\
+& not college grad & 1699 & 76.2 &  &  &  &  &  \\
+married & married & 1431 & 64.2 &  &  &  &  &  \\
+& single & 798 & 35.8 &  &  &  &  &  \\
+\bottomrule
+\end{tblr}
+\end{table} 
+
+\section{Question 7}
+As we see from the below table the $\beta$1 only varies by a max range of .006 though all estimates are off by about .03.  I may not have done the estimates correctly, but I they are all very close and I do not see much of a difference between the imputed models in the given sample. 
+
+
+\begin{table} [H]
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]},
+column{1}={halign=l,},
+column{2}={halign=c,},
+column{3}={halign=c,},
+column{4}={halign=c,},
+column{5}={halign=c,},
+column{6}={halign=c,},
+hline{14}={1,2,3,4,5,6}{solid, 0.05em, black},
+}                     %% tabularray inner close
+\toprule
+& (1) & (2) & (3) & (4) & (5) \\ \midrule %% TinyTableHeader
+(Intercept)             & \num{0.685}    & \num{0.702}    & \num{0.618}    & \num{0.700}    & \num{0.656}    \\
+& (\num{0.125})  & (\num{0.125})  & (\num{0.126})  & (\num{0.127})  & (\num{0.128})  \\
+hgc                     & \num{0.060}    & \num{0.061}    & \num{0.065}    & \num{0.061}    & \num{0.059}    \\
+& (\num{0.005})  & (\num{0.005})  & (\num{0.005})  & (\num{0.005})  & (\num{0.005})  \\
+tenure                  & \num{0.023}    & \num{0.024}    & \num{0.022}    & \num{0.024}    & \num{0.023}    \\
+& (\num{0.001})  & (\num{0.001})  & (\num{0.001})  & (\num{0.001})  & (\num{0.001})  \\
+age                     & \num{0.000}    & \num{-0.002}   & \num{0.000}    & \num{-0.002}   & \num{0.001}    \\
+& (\num{0.002})  & (\num{0.002})  & (\num{0.002})  & (\num{0.002})  & (\num{0.002})  \\
+marriedsingle           & \num{-0.032}   & \num{-0.023}   & \num{-0.020}   & \num{-0.019}   & \num{-0.024}   \\
+& (\num{0.015})  & (\num{0.015})  & (\num{0.015})  & (\num{0.015})  & (\num{0.015})  \\
+collegenot college grad & \num{0.105}    & \num{0.132}    & \num{0.110}    & \num{0.125}    & \num{0.108}    \\
+& (\num{0.028})  & (\num{0.028})  & (\num{0.028})  & (\num{0.029})  & (\num{0.029})  \\
+Num.Obs.                & \num{2246}     & \num{2246}     & \num{2246}     & \num{2246}     & \num{2246}     \\
+R2                      & \num{0.234}    & \num{0.232}    & \num{0.233}    & \num{0.223}    & \num{0.213}    \\
+R2 Adj.                 & \num{0.232}    & \num{0.230}    & \num{0.231}    & \num{0.221}    & \num{0.211}    \\
+AIC                     & \num{1520.1}   & \num{1520.9}   & \num{1562.9}   & \num{1606.2}   & \num{1633.5}   \\
+BIC                     & \num{1560.1}   & \num{1561.0}   & \num{1602.9}   & \num{1646.2}   & \num{1673.5}   \\
+Log.Lik.                & \num{-753.037} & \num{-753.469} & \num{-774.427} & \num{-796.080} & \num{-809.727} \\
+F                       & \num{136.666}  & \num{135.038}  & \num{136.213}  & \num{128.617}  & \num{121.000}  \\
+RMSE                    & \num{0.34}     & \num{0.34}     & \num{0.34}     & \num{0.34}     & \num{0.35}     \\
+\bottomrule
+\end{tblr}
+\end{table} 
+
+\section{Question 8}
+    My project is slow, I have be prioritizing the completion of my second year paper.  My project is a web scraping longitudinal analysis of meeting minutes for a makerspace in Dallas.  I am scraping meeting attendance and committees and will do a poisson regression to help understand how organizations organically grow with membership.
+
+
+\end{document}
