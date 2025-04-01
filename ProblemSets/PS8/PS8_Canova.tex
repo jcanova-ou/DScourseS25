@@ -1,0 +1,68 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{float}
+
+\title{Problem Set 8}
+\author{Justin Canova}
+
+\begin{document}
+\maketitle
+
+
+\section{Question 5}
+
+Based on my output, the responses are close (see table 1), all within a thousandth rounding.
+\begin{table}
+    \centering
+    \begin{tabular}{c|c|c}
+    True Beta & Estimated Beta & Difference \\\hline
+         1.50   &   1.4995523 & -0.0004476827\\
+         -1.00  &   -0.9984086 & 0.0015914221\\
+         -0.25  &  -0.2502771 & -0.0002771308\\
+         0.75   &   0.7491285 & -0.0008715269\\
+         3.50   &   3.4998545 & -0.0001454896\\
+         -2.00  &   -2.0009140 & -0.0009140185\\
+         0.50   &   0.4992039 & -0.0007960655\\
+         1.00   &   0.9988006 & -0.0011994357\\
+         1.25   &   1.2503899 &  0.0003898716\\
+         2.00   &   1.9998498 & -0.0001502278\\
+    \end{tabular}
+    \caption{}
+    \label{tab:my_label}
+\end{table}
+
+\section{Question 6}
+ On first initial inspection, the two models appear to be identical.  Upon further inspection, any differences are found at $e^-14$.  
+ \begin{table}
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c}
+   True Beta & CF OLS & Grad Descent & LBFGS & Nelder Mead & LBFGS v OLS Dif & NM v OLS Dif True Beta \\\hline
+        1.50 & 1.4995523 & 1.4995502 & 1.4995523 & 1.4995523 & -2.176037e-14 & -9.430641e-09 \\
+        -1.00 & -0.9984086 & -0.9984070 & -0.9984086 & -0.9984086 & -3.541611e-14 & 8.715273e-09 \\
+        -0.25 & -0.2502771 & -0.2502774 & -0.2502771 & -0.2502771 & 8.659740e-15 & -4.841361e-09 \\
+        0.75 & 0.7491285 & 0.7491277 & 0.7491285 & 0.7491285 & 1.865175e-14 & 1.202086e-08 \\
+        3.50 & 3.4998545 & 3.4998488 & 3.4998545 & 3.4998545 & -9.325873e-15 & -2.987008e-08 \\
+        -2.00 & -2.0009140 & -2.0009104 & -2.0009140 & -2.0009140 & -1.865175e-14 & 1.391106e-08 \\
+        0.50 & 0.4992039 & 0.4992029 & 0.4992039 & 0.4992039 & -1.332268e-15 & -1.569242e-08 \\
+        1.00 & 0.9988006 & 0.9987983 & 0.9988006 & 0.9988006 & 1.376677e-14 & 4.648339e-09 \\
+        1.25 & 1.2503899 & 1.2503886 & 1.2503899 & 1.2503899 & 6.883383e-15 & -7.902403e-10 \\
+        2.00 & 1.9998498 & 1.9998468 & 1.9998498 & 1.9998498 & 2.065015e-14 & -6.837876e-09 \\
+    \end{tabular}
+    \caption{}
+    \label{tab:my_label}
+\end{table}
+ 
+  
+\end{document}
