@@ -1,0 +1,49 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Problem Set 9}
+\author{Justin Canova}
+
+\begin{document}
+\maketitle
+
+\section{LASSO}
+\subsection{What is the optimal value of $\lambda$?}
+0.0233
+
+\subsection{What is the in-sample RMSE?}
+0.187
+
+\subsection{What is the out-of-sample RMSE (i.e. the RMSE in the test data)?]}
+0.149
+
+
+\section{Ridge Model}
+\subsection{What is the optimal value of $\lambda$ now?}
+0.0000000001
+
+\subsection{What is the out-of-sample RMSE (i.e. the RMSE in the test data)?}
+0.157
+
+\section{Additional Questions}
+\subsection{Would you be able to estimate a simple linear regression model on a data set that had more columns than rows?}
+
+Given the high dimensionality of such a scenario, an overfitting of an equation would ensue and thus transition a linear model into an exponential model.
+
+
+\subsection{Bias-Variance Tradeoff}
+Judging by the lower out-of-sample RMSE of the two (Ridge), I would suppose that the Ridge is the better model in terms of the bias-variance trade-off.
+
+\end{document}
