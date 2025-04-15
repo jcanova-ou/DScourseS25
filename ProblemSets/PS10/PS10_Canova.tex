@@ -1,0 +1,56 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{float}
+
+\title{Problem Set 10}
+\author{Justin Canova}
+
+\begin{document}
+\maketitle
+\section{ How does each algorithm’s out-of-sample performance compare
+with each of the other algorithms?}
+See table 1 below.
+Best performing model: Decision Tree
+
+\begin{table}
+    \centering
+    \begin{tabular}{c|c}
+      Accuracy & Model \\\hline
+        0.868 & Decision Tree    \\     
+         0.861 & Support Vector Machine \\
+   0.853 & Logistic Regression   \\
+   0.853 & Neural Network        \\
+    0.843 & K-Nearest Neighbors   \\
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+    \end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{l|r}
+Model & Parameters \\\hline
+Logistic Regression & $penalty = 0.001$ \\
+Decision Tree & $min_n = 10$ , $depth = 15$ , $complexity = 0.001$\\
+Neural Network & $hidden_units = 4$ , $penalty = 0.1$\\
+K-Nearest Neighbors & $neighbors = 30$\\
+Support Vector Machine & $cost = 1$ , $sigma = 0.25$
+
+\end{tabular}
+\caption{\label{tab:widgets}Model Fit Tables}
+\end{table}
+
+
+
+\end{document}
