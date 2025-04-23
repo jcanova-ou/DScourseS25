@@ -65,6 +65,19 @@ knitr::include_graphics("dataLiteracy.jpg")
 
 Which fallacies is machine learning good at addressing? Which fallacies is econometrics good at addressing?
 
+---
+# The Big Data Paradox
+
+[This paper](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-12/issue-2/Statistical-paradises-and-paradoxes-in-big-data-I--Law/10.1214/18-AOAS1161SF.full) discusses the .hi[big data paradox]:
+
+>  without taking data quality into account, population inferences with Big Data are subject to a Big Data Paradox: the more the data, the surer we fool ourselves
+
+In other words, data quality matters more than data quantity
+
+... but what do we mean by "data quality"? 
+
+- random sampling from a population
+- designing data collection to produce causal estimates
 
 ---
 # Importance of data

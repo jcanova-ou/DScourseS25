@@ -4,6 +4,7 @@
     <title>Lecture 24</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="24slides_files/header-attrs-2.29/header-attrs.js"></script>
     <link href="24slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="24slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="24slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -25,10 +26,18 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Lecture 24
+]
+.subtitle[
 ## Machine Learning vs. Econometrics
+]
+.author[
 ### Tyler Ransom
+]
+.date[
 ### ECON 5253, University of Oklahoma
+]
 
 ---
 
@@ -69,6 +78,19 @@ Before doing that, let's briefly discuss the following Data Fallacies (which I r
 
 Which fallacies is machine learning good at addressing? Which fallacies is econometrics good at addressing?
 
+---
+# The Big Data Paradox
+
+[This paper](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-12/issue-2/Statistical-paradises-and-paradoxes-in-big-data-I--Law/10.1214/18-AOAS1161SF.full) discusses the .hi[big data paradox]:
+
+&gt;  without taking data quality into account, population inferences with Big Data are subject to a Big Data Paradox: the more the data, the surer we fool ourselves
+
+In other words, data quality matters more than data quantity
+
+... but what do we mean by "data quality"? 
+
+- random sampling from a population
+- designing data collection to produce causal estimates
 
 ---
 # Importance of data
@@ -276,6 +298,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
